@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Objects>
+  <Object>
+    <Property Name="ExportedFrom">
+      <Property Name="ExportDateTime">2023-02-19 13:20</Property>
+      <Property Name="ComputerSource">PC-LETALYS</Property>
+      <Property Name="Manufacturer">To Be Filled By O.E.M.</Property>
+      <Property Name="ModelName">To Be Filled By O.E.M.</Property>
+      <Property Name="ModelVersion">To Be Filled By O.E.M.</Property>
+      <Property Name="SerialNumber">To Be Filled By O.E.M.</Property>
+      <Property Name="OperatingSystemVersion">10.0.19045</Property>
+    </Property>
+    <Property Name="NetAdapterInformations">
+      <Property Name="InterfaceDescription">Killer E2200 Gigabit Ethernet Controller</Property>
+      <Property Name="DriverFileName">e2xw10x64.sys</Property>
+      <Property Name="DriverVersion">9.0.0.42</Property>
+      <Property Name="DriverDate">2016-09-14</Property>
+      <Property Name="AdvancedSettings">
+        <Property>
+          <Property Name="*PMARPOffload">
+            <Property Name="Value">Enabled</Property>
+            <Property Name="ValidDisplayValues">
+              <Property>Enabled</Property>
+              <Property>Disabled</Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="Ecma">
+            <Property Name="Value">Disabled</Property>
+            <Property Name="ValidDisplayValues">
+              <Property>Enabled</Property>
+              <Property>Disabled</Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="*EEE">
+            <Property Name="Value">Disabled</Property>
+            <Property Name="ValidDisplayValues">
+              <Property>Enabled</Property>
+              <Property>Disabled</Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="*FlowControl">
+            <Property Name="Value">Rx &amp; Tx Enabled</Property>
+            <Property Name="ValidDisplayValues">
+              <Property>Tx Enabled</Property>
+              <Property>Rx Enabled</Property>
+              <Property>Rx &amp; Tx Enabled</Property>
+              <Property>Disabled</Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="*InterruptModeration">
+            <Property Name="Value">Enabled</Property>
+            <Property Name="ValidDisplayValues">
+              <Property>Enabled</Property>
+              <Property>Disabled</Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="*IPChecksumOffloadIPv4">
+            <Property Name="Value">Rx &amp; Tx Enabled</Property>
+            <Property Name="ValidDisplayValues">
+              <Property>Rx &amp; Tx Enabled</Property>
+              <Property>Rx Enabled</Property>
+              <Property>Tx Enabled</Property>
+              <Property>Disabled</Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="*JumboPacket">
+            <Property Name="Value">Disabled</Property>
+            <Property Name="ValidDisplayValues">
+              <Property>Disabled</Property>
+              <Property>2KB MTU</Property>
+              <Property>3KB MTU</Property>
+              <Property>4KB MTU</Property>
+              <Property>5KB MTU</Property>
+              <Property>6KB MTU</Property>
+              <Property>7KB MTU</Property>
+              <Property>8KB MTU</Property>
+              <Property>9KB MTU</Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="*LsoV1IPv4">
+            <Property Name="Value">Enabled</Property>
+            <Property Name="ValidDisplayValues">
+              <Property>Enabled</Property>
+              <Property>Disabled</Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="*LsoV2IPv4">
+            <Property Name="Value">Enabled</Property>
+            <Property Name="ValidDisplayValues">
+              <Property>Enabled</Property>
+              <Property>Disabled</Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="*LsoV2IPv6">
+            <Property Name="Value">Enabled</Property>
+            <Property Name="ValidDisplayValues">
+              <Property>Enabled</Property>
+              <Property>Disabled</Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="MaxInterrupt">
+            <Property Name="Value">10000</Property>
+            <Property Name="ValidDisplayValues" />
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="*NumRssQueues">
+            <Property Name="Value">2 RSS Queues</Property>
+            <Property Name="ValidDisplayValues">
+              <Property>4 RSS Queues</Property>
+              <Property>2 RSS Queues</Property>
+              <Property>1 RSS Queues</Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="NetworkAddress">
+            <Property Name="Value">
+            </Property>
+            <Property Name="ValidDisplayValues" />
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="*PMNSOffload">
+            <Property Name="Value">Enabled</Property>
+            <Property Name="ValidDisplayValues">
+              <Property>Enabled</Property>
+              <Property>Disabled</Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="*ReceiveBuffers">
+            <Property Name="Value">1024</Property>
+            <Property Name="ValidDisplayValues" />
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="*RSS">
+            <Property Name="Value">Enabled</Property>
+            <Property Name="ValidDisplayValues">
+              <Property>Enabled</Property>
+              <Property>Disabled</Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="ShutdownWake">
+            <Property Name="Value">Enabled</Property>
+            <Property Name="ValidDisplayValues">
+              <Property>Enabled</Property>
+              <Property>Disabled</Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="*SpeedDuplex">
+            <Property Name="Value">Auto Negotiation</Property>
+            <Property Name="ValidDisplayValues">
+              <Property>Auto Negotiation</Property>
+              <Property>10 Mbps Half Duplex</Property>
+              <Property>10 Mbps Full Duplex</Property>
+              <Property>100 Mbps Half Duplex</Property>
+              <Property>100 Mbps Full Duplex</Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="Ioac_SwoiSupported">
+            <Property Name="Value">Disabled</Property>
+            <Property Name="ValidDisplayValues">
+              <Property>Enabled</Property>
+              <Property>Disabled</Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="*TCPChecksumOffloadIPv4">
+            <Property Name="Value">Rx &amp; Tx Enabled</Property>
+            <Property Name="ValidDisplayValues">
+              <Property>Rx &amp; Tx Enabled</Property>
+              <Property>Rx Enabled</Property>
+              <Property>Tx Enabled</Property>
+              <Property>Disabled</Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="*TCPChecksumOffloadIPv6">
+            <Property Name="Value">Rx &amp; Tx Enabled</Property>
+            <Property Name="ValidDisplayValues">
+              <Property>Rx &amp; Tx Enabled</Property>
+              <Property>Rx Enabled</Property>
+              <Property>Tx Enabled</Property>
+              <Property>Disabled</Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="*TransmitBuffers">
+            <Property Name="Value">1024</Property>
+            <Property Name="ValidDisplayValues" />
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="*UDPChecksumOffloadIPv4">
+            <Property Name="Value">Rx &amp; Tx Enabled</Property>
+            <Property Name="ValidDisplayValues">
+              <Property>Rx &amp; Tx Enabled</Property>
+              <Property>Rx Enabled</Property>
+              <Property>Tx Enabled</Property>
+              <Property>Disabled</Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="*UDPChecksumOffloadIPv6">
+            <Property Name="Value">Rx &amp; Tx Enabled</Property>
+            <Property Name="ValidDisplayValues">
+              <Property>Rx &amp; Tx Enabled</Property>
+              <Property>Rx Enabled</Property>
+              <Property>Tx Enabled</Property>
+              <Property>Disabled</Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="VLanID">
+            <Property Name="Value">0</Property>
+            <Property Name="ValidDisplayValues" />
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="*WakeOnMagicPacket">
+            <Property Name="Value">Enabled</Property>
+            <Property Name="ValidDisplayValues">
+              <Property>Enabled</Property>
+              <Property>Disabled</Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="*WakeOnPattern">
+            <Property Name="Value">Enabled</Property>
+            <Property Name="ValidDisplayValues">
+              <Property>Enabled</Property>
+              <Property>Disabled</Property>
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+    </Property>
+  </Object>
+</Objects>

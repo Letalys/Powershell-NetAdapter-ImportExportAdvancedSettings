@@ -16,7 +16,7 @@
 
 Clear-Host
 Write-Host -ForegroundColor Cyan "------------------------------------------------------------"
-Write-Host -ForegroundColor Cyan "       NetAdapter Advanced Settings Exporting           "
+Write-Host -ForegroundColor Cyan "       NetAdapter Advanced Settings Exporting    v1         "
 Write-Host -ForegroundColor Cyan "------------------------------------------------------------"
 Write-Host ""
 

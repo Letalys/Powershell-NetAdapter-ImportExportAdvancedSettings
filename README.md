@@ -10,8 +10,11 @@ I'm using this scripts with Microsoft EndPoint Configuration Manager for deployi
 ### [v1](./v1) : Using NetAdapter Module
 This version of Import/Export NetworkAdapter AdvancedSettings use the NetAdapter module of Powershell.This Module was introduced by __Powershell 4.0.__ Works only with version 4.0 or higher of Powershell on __Windows 8 and higher__.
 
-### [v2](./v2) : Using WMI and Registry (Comming Soon)
+### [v2](./v2) : Using WMI and Registry
 This Version of Import/Export NetworkAdapter AdvancedSettings use WMI and Registry to work. It can use on all Windows Version. But i recommand to use v1 for compatible Operating System.
+
+__This version is being rebuilt__
+
 ## NetworkAdapter Models and Drivers Versions
 Imports of settings can only be carried out if the network adapter and its driver version correspond to the elements present on the target system.
 

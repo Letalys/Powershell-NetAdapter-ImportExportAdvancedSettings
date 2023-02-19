@@ -29,7 +29,7 @@ if($currentPrincipal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administr
 
 Clear-Host
 Write-Host -ForegroundColor Cyan "------------------------------------------------------------"
-Write-Host -ForegroundColor Cyan "       NetAdapter Advanced Settings Importing               "
+Write-Host -ForegroundColor Cyan "       NetAdapter Advanced Settings Importing   v1          "
 Write-Host -ForegroundColor Cyan "------------------------------------------------------------"
 Write-Host ""
 
@@ -63,8 +63,8 @@ Try {
     $NetAdapterList = Get-NetAdapter -Physical -InterfaceDescription "$($NetAdapterIfName.("#text"))" -ErrorAction SilentlyContinue
 
     Switch($true){
-        ($($NetAdapterList | Measure-Object).count -eq 0){Write-Error "`nNo matches found" -Category InvalidResult;exit}
-        ($($NetAdapterList | Measure-Object).count -gt 1){Write-Error "`n Multiple matches found, unable to continue." -Category InvalidResult;exit}
+        ($($NetAdapterList | Measure-Object).count -eq 0){Write-Error "No matches found" -Category InvalidResult;exit}
+        ($($NetAdapterList | Measure-Object).count -gt 1){Write-Error "Multiple matches found, unable to continue." -Category InvalidResult;exit}
         ($($NetAdapterList | Measure-Object).count -eq 1){
             Write-Host -ForegroundColor Green "Match found"
             Write-host -ForegroundColor Yellow -NoNewline "Checking the driver version specified in XML File... "
@@ -87,7 +87,7 @@ Try {
                 }
                 Write-Host -ForegroundColor green "Process Completed"
             }else{
-                Write-Error "`nDrivers Versions do not match" -Category InvalidResult
+                Write-Error "Drivers Versions do not match" -Category InvalidResult
                 exit
             }
         }

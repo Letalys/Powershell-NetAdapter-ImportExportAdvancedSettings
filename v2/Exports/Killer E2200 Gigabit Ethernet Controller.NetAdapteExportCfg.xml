@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NetAdapterExport>
+  <ExportInformations>
+    <Origin>PC-LETALYS</Origin>
+    <Manufacturer>To Be Filled By O.E.M.</Manufacturer>
+    <Model>To Be Filled By O.E.M.</Model>
+    <Version>To Be Filled By O.E.M.</Version>
+    <SN>To Be Filled By O.E.M.</SN>
+    <OperatingSystemVersion>10.0.19045</OperatingSystemVersion>
+    <ExportDateTime>2023-02-19 17:44</ExportDateTime>
+  </ExportInformations>
+  <NetAdapterInformations>
+    <Name>Killer E2200 Gigabit Ethernet Controller</Name>
+    <DriverInfos>
+      <FileName>KillerEth</FileName>
+      <INF>e2xw10x64.inf</INF>
+      <Version>9.0.0.42</Version>
+      <DateVersion>2016-09-14</DateVersion>
+    </DriverInfos>
+    <AdapterConfiguration>
+      <Param RegistryKeyWord="*EEE" RegistryValue="0">
+        <DisplayName>Energy Efficient Ethernet</DisplayName>
+        <ValidDisplayValues>
+          <Value ValidRegistryValue="1">Enabled</Value>
+          <Value ValidRegistryValue="0">Disabled</Value>
+        </ValidDisplayValues>
+      </Param>
+      <Param RegistryKeyWord="*FlowControl" RegistryValue="3">
+        <DisplayName>Flow Control</DisplayName>
+        <ValidDisplayValues>
+          <Value ValidRegistryValue="1">Tx Enabled</Value>
+          <Value ValidRegistryValue="2">Rx Enabled</Value>
+          <Value ValidRegistryValue="3">Rx &amp; Tx Enabled</Value>
+          <Value ValidRegistryValue="0">Disabled</Value>
+        </ValidDisplayValues>
+      </Param>
+      <Param RegistryKeyWord="*InterruptModeration" RegistryValue="1">
+        <DisplayName>Interrupt Moderation</DisplayName>
+        <ValidDisplayValues>
+          <Value ValidRegistryValue="1">Enabled</Value>
+          <Value ValidRegistryValue="0">Disabled</Value>
+        </ValidDisplayValues>
+      </Param>
+      <Param RegistryKeyWord="*IPChecksumOffloadIPv4" RegistryValue="3">
+        <DisplayName>IPv4 Checksum Offload</DisplayName>
+        <ValidDisplayValues>
+          <Value ValidRegistryValue="3">Rx &amp; Tx Enabled</Value>
+          <Value ValidRegistryValue="2">Rx Enabled</Value>
+          <Value ValidRegistryValue="1">Tx Enabled</Value>
+          <Value ValidRegistryValue="0">Disabled</Value>
+        </ValidDisplayValues>
+      </Param>
+      <Param RegistryKeyWord="*JumboPacket" RegistryValue="1514">
+        <DisplayName>Jumbo Frame</DisplayName>
+        <ValidDisplayValues>
+          <Value ValidRegistryValue="1514">Disabled</Value>
+          <Value ValidRegistryValue="2048">2KB MTU</Value>
+          <Value ValidRegistryValue="3072">3KB MTU</Value>
+          <Value ValidRegistryValue="4096">4KB MTU</Value>
+          <Value ValidRegistryValue="5120">5KB MTU</Value>
+          <Value ValidRegistryValue="6144">6KB MTU</Value>
+          <Value ValidRegistryValue="7168">7KB MTU</Value>
+          <Value ValidRegistryValue="8192">8KB MTU</Value>
+          <Value ValidRegistryValue="9216">9KB MTU</Value>
+        </ValidDisplayValues>
+      </Param>
+      <Param RegistryKeyWord="*LsoV1IPv4" RegistryValue="1">
+        <DisplayName>Large Send Offload (IPv4)</DisplayName>
+        <ValidDisplayValues>
+          <Value ValidRegistryValue="1">Enabled</Value>
+          <Value ValidRegistryValue="0">Disabled</Value>
+        </ValidDisplayValues>
+      </Param>
+      <Param RegistryKeyWord="*LsoV2IPv4" RegistryValue="1">
+        <DisplayName>Large Send Offload v2 (IPv4)</DisplayName>
+        <ValidDisplayValues>
+          <Value ValidRegistryValue="1">Enabled</Value>
+          <Value ValidRegistryValue="0">Disabled</Value>
+        </ValidDisplayValues>
+      </Param>
+      <Param RegistryKeyWord="*LsoV2IPv6" RegistryValue="1">
+        <DisplayName>Large Send Offload v2 (IPv6)</DisplayName>
+        <ValidDisplayValues>
+          <Value ValidRegistryValue="1">Enabled</Value>
+          <Value ValidRegistryValue="0">Disabled</Value>
+        </ValidDisplayValues>
+      </Param>
+      <Param RegistryKeyWord="*NumRssQueues" RegistryValue="2">
+        <DisplayName>Maximum Number of RSS Queues</DisplayName>
+        <ValidDisplayValues>
+          <Value ValidRegistryValue="4">4 RSS Queues</Value>
+          <Value ValidRegistryValue="2">2 RSS Queues</Value>
+          <Value ValidRegistryValue="1">1 RSS Queues</Value>
+        </ValidDisplayValues>
+      </Param>
+      <Param RegistryKeyWord="*PMARPOffload" RegistryValue="1">
+        <DisplayName>ARP Offload</DisplayName>
+        <ValidDisplayValues>
+          <Value ValidRegistryValue="1">Enabled</Value>
+          <Value ValidRegistryValue="0">Disabled</Value>
+        </ValidDisplayValues>
+      </Param>
+      <Param RegistryKeyWord="*PMNSOffload" RegistryValue="1">
+        <DisplayName>NS Offload</DisplayName>
+        <ValidDisplayValues>
+          <Value ValidRegistryValue="1">Enabled</Value>
+          <Value ValidRegistryValue="0">Disabled</Value>
+        </ValidDisplayValues>
+      </Param>
+      <Param RegistryKeyWord="*ReceiveBuffers" RegistryValue="1024">
+        <DisplayName>Receive Buffers</DisplayName>
+        <ValidDisplayValues />
+      </Param>
+      <Param RegistryKeyWord="*RSS" RegistryValue="1">
+        <DisplayName>Receive Side Scaling</DisplayName>
+        <ValidDisplayValues>
+          <Value ValidRegistryValue="1">Enabled</Value>
+          <Value ValidRegistryValue="0">Disabled</Value>
+        </ValidDisplayValues>
+      </Param>
+      <Param RegistryKeyWord="*SpeedDuplex" RegistryValue="0">
+        <DisplayName>Speed &amp; Duplex</DisplayName>
+        <ValidDisplayValues>
+          <Value ValidRegistryValue="0">Auto Negotiation</Value>
+          <Value ValidRegistryValue="1">10 Mbps Half Duplex</Value>
+          <Value ValidRegistryValue="2">10 Mbps Full Duplex</Value>
+          <Value ValidRegistryValue="3">100 Mbps Half Duplex</Value>
+          <Value ValidRegistryValue="4">100 Mbps Full Duplex</Value>
+        </ValidDisplayValues>
+      </Param>
+      <Param RegistryKeyWord="*TCPChecksumOffloadIPv4" RegistryValue="3">
+        <DisplayName>TCP Checksum Offload (IPv4)</DisplayName>
+        <ValidDisplayValues>
+          <Value ValidRegistryValue="3">Rx &amp; Tx Enabled</Value>
+          <Value ValidRegistryValue="2">Rx Enabled</Value>
+          <Value ValidRegistryValue="1">Tx Enabled</Value>
+          <Value ValidRegistryValue="0">Disabled</Value>
+        </ValidDisplayValues>
+      </Param>
+      <Param RegistryKeyWord="*TCPChecksumOffloadIPv6" RegistryValue="3">
+        <DisplayName>TCP Checksum Offload (IPv6)</DisplayName>
+        <ValidDisplayValues>
+          <Value ValidRegistryValue="3">Rx &amp; Tx Enabled</Value>
+          <Value ValidRegistryValue="2">Rx Enabled</Value>
+          <Value ValidRegistryValue="1">Tx Enabled</Value>
+          <Value ValidRegistryValue="0">Disabled</Value>
+        </ValidDisplayValues>
+      </Param>
+      <Param RegistryKeyWord="*TransmitBuffers" RegistryValue="1024">
+        <DisplayName>Transmit Buffers</DisplayName>
+        <ValidDisplayValues />
+      </Param>
+      <Param RegistryKeyWord="*UDPChecksumOffloadIPv4" RegistryValue="3">
+        <DisplayName>UDP Checksum Offload (IPv4)</DisplayName>
+        <ValidDisplayValues>
+          <Value ValidRegistryValue="3">Rx &amp; Tx Enabled</Value>
+          <Value ValidRegistryValue="2">Rx Enabled</Value>
+          <Value ValidRegistryValue="1">Tx Enabled</Value>
+          <Value ValidRegistryValue="0">Disabled</Value>
+        </ValidDisplayValues>
+      </Param>
+      <Param RegistryKeyWord="*UDPChecksumOffloadIPv6" RegistryValue="3">
+        <DisplayName>UDP Checksum Offload (IPv6)</DisplayName>
+        <ValidDisplayValues>
+          <Value ValidRegistryValue="3">Rx &amp; Tx Enabled</Value>
+          <Value ValidRegistryValue="2">Rx Enabled</Value>
+          <Value ValidRegistryValue="1">Tx Enabled</Value>
+          <Value ValidRegistryValue="0">Disabled</Value>
+        </ValidDisplayValues>
+      </Param>
+      <Param RegistryKeyWord="*WakeOnMagicPacket" RegistryValue="1">
+        <DisplayName>Wake on magic packet</DisplayName>
+        <ValidDisplayValues>
+          <Value ValidRegistryValue="1">Enabled</Value>
+          <Value ValidRegistryValue="0">Disabled</Value>
+        </ValidDisplayValues>
+      </Param>
+      <Param RegistryKeyWord="*WakeOnPattern" RegistryValue="1">
+        <DisplayName>Wake on pattern match</DisplayName>
+        <ValidDisplayValues>
+          <Value ValidRegistryValue="1">Enabled</Value>
+          <Value ValidRegistryValue="0">Disabled</Value>
+        </ValidDisplayValues>
+      </Param>
+      <Param RegistryKeyWord="Ecma" RegistryValue="0">
+        <DisplayName>ECMA</DisplayName>
+        <ValidDisplayValues>
+          <Value ValidRegistryValue="1">Enabled</Value>
+          <Value ValidRegistryValue="0">Disabled</Value>
+        </ValidDisplayValues>
+      </Param>
+      <Param RegistryKeyWord="Ioac_SwoiSupported" RegistryValue="0">
+        <DisplayName>SWOI</DisplayName>
+        <ValidDisplayValues>
+          <Value ValidRegistryValue="1">Enabled</Value>
+          <Value ValidRegistryValue="0">Disabled</Value>
+        </ValidDisplayValues>
+      </Param>
+      <Param RegistryKeyWord="MaxInterrupt" RegistryValue="10000">
+        <DisplayName>Max IRQ per Second</DisplayName>
+        <ValidDisplayValues />
+      </Param>
+      <Param RegistryKeyWord="NetworkAddress" RegistryValue="">
+        <DisplayName>Network Address</DisplayName>
+        <ValidDisplayValues />
+      </Param>
+      <Param RegistryKeyWord="ShutdownWake" RegistryValue="1">
+        <DisplayName>Shutdown Wake Up</DisplayName>
+        <ValidDisplayValues>
+          <Value ValidRegistryValue="1">Enabled</Value>
+          <Value ValidRegistryValue="0">Disabled</Value>
+        </ValidDisplayValues>
+      </Param>
+      <Param RegistryKeyWord="VLanID" RegistryValue="0">
+        <DisplayName>VLAN ID</DisplayName>
+        <ValidDisplayValues />
+      </Param>
+    </AdapterConfiguration>
+  </NetAdapterInformations>
+</NetAdapterExport>

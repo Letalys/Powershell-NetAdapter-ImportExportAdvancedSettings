@@ -14,14 +14,14 @@
   Purpose/Change: Initial script development
 #>
 
-cls
+Clear-Host
 Write-Host -ForegroundColor Cyan "------------------------------------------------------------"
 Write-Host -ForegroundColor Cyan "       NetAdapter Advanced Settings Exporting           "
 Write-Host -ForegroundColor Cyan "------------------------------------------------------------"
 Write-Host ""
 
 Write-Host -Foreground Yellow "Physical Network Adapter List :"
-Get-NetAdapter -Physical | Select @{label='Index';expression={$_.IfIndex}},Status,InterfaceDescription,Name, DriverFileName, DriverVersion, DriverDate  | Format-Table -Autosize
+Get-NetAdapter -Physical | Select-Object @{label='Index';expression={$_.IfIndex}},Status,InterfaceDescription,Name, DriverFileName, DriverVersion, DriverDate  | Format-Table -Autosize
 
 $SelectedNetAdapterIndex = Read-Host "Enter the index of the network adapter to export"
 
@@ -30,11 +30,11 @@ Write-Host -NoNewLine  -ForegroundColor Yellow "Export..."
 
 $SelectedNetAdapter = Get-NetAdapter -InterfaceIndex $SelectedNetAdapterIndex -ErrorAction SilentlyContinue
 
-if ($SelectedNetAdapter -ne $null){
+if ($null -ne $SelectedNetAdapter){
     Try {
         $WMIComputerInfo = Get-WmiObject -Class  Win32_ComputerSystemProduct
         $WMIOSInfo = Get-WmiObject -Class  Win32_OperatingSystem
-        $SelectedNetAdapterAdvSettings = $SelectedNetAdapter | Get-NetAdapterAdvancedProperty  | Select * | Sort DisplayName
+        $SelectedNetAdapterAdvSettings = $SelectedNetAdapter | Get-NetAdapterAdvancedProperty  | Select-Object * | Sort-Objec DisplayName
 
         $ObjExport = New-Object PSObject
 
@@ -61,7 +61,7 @@ if ($SelectedNetAdapter -ne $null){
             $ObjNetAdapterAdvSettingValueInfo | Add-Member -MemberType NoteProperty -Name "Description" -Value "$($setting.DisplayName)"
             $ObjNetAdapterAdvSettingValueInfo | Add-Member -MemberType NoteProperty -Name "Value" -Value "$($setting.DisplayValue)"
 
-            $SelectNetAdapterValidDisplayAdvSettings = $Setting | Select -ExpandProperty ValidDisplayValues
+            $SelectNetAdapterValidDisplayAdvSettings = $Setting | Select-Object -ExpandProperty ValidDisplayValues
 
             [System.Collections.Arraylist]$ValidDisplayValues =@()
             foreach($ValidDisplayValue in $SelectNetAdapterValidDisplayAdvSettings){

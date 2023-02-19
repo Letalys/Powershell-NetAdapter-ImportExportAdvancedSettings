@@ -27,7 +27,7 @@ if($currentPrincipal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administr
     exit
 }
 
-cls
+Clear-Host
 Write-Host -ForegroundColor Cyan "------------------------------------------------------------"
 Write-Host -ForegroundColor Cyan "       NetAdapter Advanced Settings Importing               "
 Write-Host -ForegroundColor Cyan "------------------------------------------------------------"
@@ -55,17 +55,17 @@ Try {
     [xml]$XML = Get-Content $CurrentFile.FullName
     Write-Host -ForegroundColor Green "Completed"
 
-    $NetAdapterIfName = Select-Xml -Xml $XML -XPath "//Property[contains(@Name,'InterfaceDescription')]" | Select -ExpandProperty Node
-    $NetAdapterDriverVers  = Select-Xml -Xml $XML -XPath "//Property[contains(@Name,'DriverVersion')]" | Select -ExpandProperty Node
-    $NetAdapterAdvSettings = Select-Xml -Xml $XML -XPath "//Property[contains(@Name,'AdvancedSettings')]/Property/Property" | Select -ExpandProperty Node
+    $NetAdapterIfName = Select-Xml -Xml $XML -XPath "//Property[contains(@Name,'InterfaceDescription')]" | Select-Object -ExpandProperty Node
+    $NetAdapterDriverVers  = Select-Xml -Xml $XML -XPath "//Property[contains(@Name,'DriverVersion')]" | Select-Object -ExpandProperty Node
+    $NetAdapterAdvSettings = Select-Xml -Xml $XML -XPath "//Property[contains(@Name,'AdvancedSettings')]/Property/Property" | Select-Object -ExpandProperty Node
 
     Write-Host -NoNewline -ForegroundColor Yellow "Checking the presence of the network adapter specified in XML File... "
     $NetAdapterList = Get-NetAdapter -Physical -InterfaceDescription "$($NetAdapterIfName.("#text"))" -ErrorAction SilentlyContinue
 
     Switch($true){
-        ($($NetAdapterList | Measure).count -eq 0){Write-Error "`nNo matches found" -Category InvalidResult;exit}
-        ($($NetAdapterList | Measure).count -gt 1){Write-Error "`n Multiple matches found, unable to continue." -Category InvalidResult;exit}
-        ($($NetAdapterList | Measure).count -eq 1){
+        ($($NetAdapterList | Measure-Object).count -eq 0){Write-Error "`nNo matches found" -Category InvalidResult;exit}
+        ($($NetAdapterList | Measure-Object).count -gt 1){Write-Error "`n Multiple matches found, unable to continue." -Category InvalidResult;exit}
+        ($($NetAdapterList | Measure-Object).count -eq 1){
             Write-Host -ForegroundColor Green "Match found"
             Write-host -ForegroundColor Yellow -NoNewline "Checking the driver version specified in XML File... "
 
@@ -74,10 +74,10 @@ Try {
                 Write-host -ForegroundColor Yellow  "Import settings... "
 
                 Foreach($setting in $NetAdapterAdvSettings){
-                    $GetValue = Select-Xml -Xml $XML -XPath "//Property[contains(@Name,'$($setting.Name)')]//Property[@Name='Value']" | Select -ExpandProperty Node
+                    $GetValue = Select-Xml -Xml $XML -XPath "//Property[contains(@Name,'$($setting.Name)')]//Property[@Name='Value']" | Select-Object -ExpandProperty Node
         
                     Write-Host -ForegroundColor Yellow -NoNewline "`t $($setting.Name) : "
-                    if($GetValue.("#text") -ne $null){
+                    if($null -ne $GetValue.("#text")){
                         Set-NetAdapterAdvancedProperty -InterfaceDescription $NetAdapterList.InterfaceDescription -RegistryKeyword "$($($setting.Name))" -DisplayValue $($GetValue.("#text"))
                         Write-Host -ForegroundColor green "Applied"
                         

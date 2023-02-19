@@ -1,4 +1,18 @@
 #Requires -Version 4.0
+<#
+.SYNOPSIS
+  This script can be use for export NetAdapter AdvancedSetting to XML format
+.DESCRIPTION
+  Using NetAdapter Module, create a exportable object to XML. Generated XML can be import with the script NetAdapter-ImportAdvSettings.ps1.
+  Must be used in console UI.
+.OUTPUTS
+  .\Export\<InterfaceDescription>.NetAdapterExport.xml
+.NOTES
+  Version:        1.0
+  Author:         Letalys
+  Creation Date:  19/02/2023
+  Purpose/Change: Initial script development
+#>
 
 cls
 Write-Host -ForegroundColor Cyan "------------------------------------------------------------"

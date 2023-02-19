@@ -58,6 +58,7 @@ if ($SelectedNetAdapter -ne $null){
         [System.Collections.Arraylist]$SettingsList =@()
         foreach($Setting in $SelectedNetAdapterAdvSettings){
             $ObjNetAdapterAdvSettingValueInfo = New-Object PSObject
+            $ObjNetAdapterAdvSettingValueInfo | Add-Member -MemberType NoteProperty -Name "Description" -Value "$($setting.DisplayName)"
             $ObjNetAdapterAdvSettingValueInfo | Add-Member -MemberType NoteProperty -Name "Value" -Value "$($setting.DisplayValue)"
 
             $SelectNetAdapterValidDisplayAdvSettings = $Setting | Select -ExpandProperty ValidDisplayValues

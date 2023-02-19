@@ -2,7 +2,7 @@
 <Objects>
   <Object>
     <Property Name="ExportedFrom">
-      <Property Name="ExportDateTime">2023-02-19 17:47</Property>
+      <Property Name="ExportDateTime">2023-02-19 17:50</Property>
       <Property Name="ComputerSource">PC-LETALYS</Property>
       <Property Name="Manufacturer">To Be Filled By O.E.M.</Property>
       <Property Name="ModelName">To Be Filled By O.E.M.</Property>
@@ -18,7 +18,7 @@
       <Property Name="AdvancedSettings">
         <Property>
           <Property Name="*PMARPOffload">
-            <Property Name="Display">ARP Offload</Property>
+            <Property Name="Description">ARP Offload</Property>
             <Property Name="Value">Enabled</Property>
             <Property Name="ValidDisplayValues">
               <Property>Enabled</Property>
@@ -28,7 +28,7 @@
         </Property>
         <Property>
           <Property Name="Ecma">
-            <Property Name="Display">ECMA</Property>
+            <Property Name="Description">ECMA</Property>
             <Property Name="Value">Disabled</Property>
             <Property Name="ValidDisplayValues">
               <Property>Enabled</Property>
@@ -38,7 +38,7 @@
         </Property>
         <Property>
           <Property Name="*EEE">
-            <Property Name="Display">Energy Efficient Ethernet</Property>
+            <Property Name="Description">Energy Efficient Ethernet</Property>
             <Property Name="Value">Disabled</Property>
             <Property Name="ValidDisplayValues">
               <Property>Enabled</Property>
@@ -48,7 +48,7 @@
         </Property>
         <Property>
           <Property Name="*FlowControl">
-            <Property Name="Display">Flow Control</Property>
+            <Property Name="Description">Flow Control</Property>
             <Property Name="Value">Rx &amp; Tx Enabled</Property>
             <Property Name="ValidDisplayValues">
               <Property>Tx Enabled</Property>
@@ -60,7 +60,7 @@
         </Property>
         <Property>
           <Property Name="*InterruptModeration">
-            <Property Name="Display">Interrupt Moderation</Property>
+            <Property Name="Description">Interrupt Moderation</Property>
             <Property Name="Value">Enabled</Property>
             <Property Name="ValidDisplayValues">
               <Property>Enabled</Property>
@@ -70,7 +70,7 @@
         </Property>
         <Property>
           <Property Name="*IPChecksumOffloadIPv4">
-            <Property Name="Display">IPv4 Checksum Offload</Property>
+            <Property Name="Description">IPv4 Checksum Offload</Property>
             <Property Name="Value">Rx &amp; Tx Enabled</Property>
             <Property Name="ValidDisplayValues">
               <Property>Rx &amp; Tx Enabled</Property>
@@ -82,7 +82,7 @@
         </Property>
         <Property>
           <Property Name="*JumboPacket">
-            <Property Name="Display">Jumbo Frame</Property>
+            <Property Name="Description">Jumbo Frame</Property>
             <Property Name="Value">Disabled</Property>
             <Property Name="ValidDisplayValues">
               <Property>Disabled</Property>
@@ -99,7 +99,7 @@
         </Property>
         <Property>
           <Property Name="*LsoV1IPv4">
-            <Property Name="Display">Large Send Offload (IPv4)</Property>
+            <Property Name="Description">Large Send Offload (IPv4)</Property>
             <Property Name="Value">Enabled</Property>
             <Property Name="ValidDisplayValues">
               <Property>Enabled</Property>
@@ -109,7 +109,7 @@
         </Property>
         <Property>
           <Property Name="*LsoV2IPv4">
-            <Property Name="Display">Large Send Offload v2 (IPv4)</Property>
+            <Property Name="Description">Large Send Offload v2 (IPv4)</Property>
             <Property Name="Value">Enabled</Property>
             <Property Name="ValidDisplayValues">
               <Property>Enabled</Property>
@@ -119,7 +119,7 @@
         </Property>
         <Property>
           <Property Name="*LsoV2IPv6">
-            <Property Name="Display">Large Send Offload v2 (IPv6)</Property>
+            <Property Name="Description">Large Send Offload v2 (IPv6)</Property>
             <Property Name="Value">Enabled</Property>
             <Property Name="ValidDisplayValues">
               <Property>Enabled</Property>
@@ -129,14 +129,14 @@
         </Property>
         <Property>
           <Property Name="MaxInterrupt">
-            <Property Name="Display">Max IRQ per Second</Property>
+            <Property Name="Description">Max IRQ per Second</Property>
             <Property Name="Value">10000</Property>
             <Property Name="ValidDisplayValues" />
           </Property>
         </Property>
         <Property>
           <Property Name="*NumRssQueues">
-            <Property Name="Display">Maximum Number of RSS Queues</Property>
+            <Property Name="Description">Maximum Number of RSS Queues</Property>
             <Property Name="Value">2 RSS Queues</Property>
             <Property Name="ValidDisplayValues">
               <Property>4 RSS Queues</Property>
@@ -147,7 +147,7 @@
         </Property>
         <Property>
           <Property Name="NetworkAddress">
-            <Property Name="Display">Network Address</Property>
+            <Property Name="Description">Network Address</Property>
             <Property Name="Value">
             </Property>
             <Property Name="ValidDisplayValues" />
@@ -155,7 +155,7 @@
         </Property>
         <Property>
           <Property Name="*PMNSOffload">
-            <Property Name="Display">NS Offload</Property>
+            <Property Name="Description">NS Offload</Property>
             <Property Name="Value">Enabled</Property>
             <Property Name="ValidDisplayValues">
               <Property>Enabled</Property>
@@ -165,14 +165,14 @@
         </Property>
         <Property>
           <Property Name="*ReceiveBuffers">
-            <Property Name="Display">Receive Buffers</Property>
+            <Property Name="Description">Receive Buffers</Property>
             <Property Name="Value">1024</Property>
             <Property Name="ValidDisplayValues" />
           </Property>
         </Property>
         <Property>
           <Property Name="*RSS">
-            <Property Name="Display">Receive Side Scaling</Property>
+            <Property Name="Description">Receive Side Scaling</Property>
             <Property Name="Value">Enabled</Property>
             <Property Name="ValidDisplayValues">
               <Property>Enabled</Property>
@@ -182,7 +182,7 @@
         </Property>
         <Property>
           <Property Name="ShutdownWake">
-            <Property Name="Display">Shutdown Wake Up</Property>
+            <Property Name="Description">Shutdown Wake Up</Property>
             <Property Name="Value">Enabled</Property>
             <Property Name="ValidDisplayValues">
               <Property>Enabled</Property>
@@ -192,7 +192,7 @@
         </Property>
         <Property>
           <Property Name="*SpeedDuplex">
-            <Property Name="Display">Speed &amp; Duplex</Property>
+            <Property Name="Description">Speed &amp; Duplex</Property>
             <Property Name="Value">Auto Negotiation</Property>
             <Property Name="ValidDisplayValues">
               <Property>Auto Negotiation</Property>
@@ -205,7 +205,7 @@
         </Property>
         <Property>
           <Property Name="Ioac_SwoiSupported">
-            <Property Name="Display">SWOI</Property>
+            <Property Name="Description">SWOI</Property>
             <Property Name="Value">Disabled</Property>
             <Property Name="ValidDisplayValues">
               <Property>Enabled</Property>
@@ -215,7 +215,7 @@
         </Property>
         <Property>
           <Property Name="*TCPChecksumOffloadIPv4">
-            <Property Name="Display">TCP Checksum Offload (IPv4)</Property>
+            <Property Name="Description">TCP Checksum Offload (IPv4)</Property>
             <Property Name="Value">Rx &amp; Tx Enabled</Property>
             <Property Name="ValidDisplayValues">
               <Property>Rx &amp; Tx Enabled</Property>
@@ -227,7 +227,7 @@
         </Property>
         <Property>
           <Property Name="*TCPChecksumOffloadIPv6">
-            <Property Name="Display">TCP Checksum Offload (IPv6)</Property>
+            <Property Name="Description">TCP Checksum Offload (IPv6)</Property>
             <Property Name="Value">Rx &amp; Tx Enabled</Property>
             <Property Name="ValidDisplayValues">
               <Property>Rx &amp; Tx Enabled</Property>
@@ -239,14 +239,14 @@
         </Property>
         <Property>
           <Property Name="*TransmitBuffers">
-            <Property Name="Display">Transmit Buffers</Property>
+            <Property Name="Description">Transmit Buffers</Property>
             <Property Name="Value">1024</Property>
             <Property Name="ValidDisplayValues" />
           </Property>
         </Property>
         <Property>
           <Property Name="*UDPChecksumOffloadIPv4">
-            <Property Name="Display">UDP Checksum Offload (IPv4)</Property>
+            <Property Name="Description">UDP Checksum Offload (IPv4)</Property>
             <Property Name="Value">Rx &amp; Tx Enabled</Property>
             <Property Name="ValidDisplayValues">
               <Property>Rx &amp; Tx Enabled</Property>
@@ -258,7 +258,7 @@
         </Property>
         <Property>
           <Property Name="*UDPChecksumOffloadIPv6">
-            <Property Name="Display">UDP Checksum Offload (IPv6)</Property>
+            <Property Name="Description">UDP Checksum Offload (IPv6)</Property>
             <Property Name="Value">Rx &amp; Tx Enabled</Property>
             <Property Name="ValidDisplayValues">
               <Property>Rx &amp; Tx Enabled</Property>
@@ -270,14 +270,14 @@
         </Property>
         <Property>
           <Property Name="VLanID">
-            <Property Name="Display">VLAN ID</Property>
+            <Property Name="Description">VLAN ID</Property>
             <Property Name="Value">0</Property>
             <Property Name="ValidDisplayValues" />
           </Property>
         </Property>
         <Property>
           <Property Name="*WakeOnMagicPacket">
-            <Property Name="Display">Wake on magic packet</Property>
+            <Property Name="Description">Wake on magic packet</Property>
             <Property Name="Value">Enabled</Property>
             <Property Name="ValidDisplayValues">
               <Property>Enabled</Property>
@@ -287,7 +287,7 @@
         </Property>
         <Property>
           <Property Name="*WakeOnPattern">
-            <Property Name="Display">Wake on pattern match</Property>
+            <Property Name="Description">Wake on pattern match</Property>
             <Property Name="Value">Enabled</Property>
             <Property Name="ValidDisplayValues">
               <Property>Enabled</Property>

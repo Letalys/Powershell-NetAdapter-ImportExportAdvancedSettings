@@ -84,7 +84,7 @@ if($null -ne $SelectedNetAdapter){
                     $ObjValidValues | Add-Member -MemberType NoteProperty -Name "$vrv" -Value $ValidDisplayValue.$vrv
                 }
             }
-            
+
             $ObjNetAdapterAdvSettingValueInfo | Add-Member -MemberType NoteProperty -Name "ValidDisplayValues" -Value $ObjValidValues
 
             $ObjNetAdapterAdvSetting = New-Object PSObject
@@ -109,3 +109,4 @@ if($null -ne $SelectedNetAdapter){
 }else{
      Write-Error  "NetworkAdapter Index not found"
 }
+pause

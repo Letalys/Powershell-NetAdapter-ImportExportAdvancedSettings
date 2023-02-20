@@ -89,4 +89,4 @@ if ($null -ne $SelectedNetAdapter){
 }else{
     Write-Error "No NetworkAdapter exists for the specified index." -Category ObjectNotFound
 }
-Write-Host ""
+Pause

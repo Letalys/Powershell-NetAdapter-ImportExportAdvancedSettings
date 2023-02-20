@@ -84,7 +84,7 @@ if ($null -ne $SelectedNetAdapter){
         Write-Host -NoNewLine -ForegroundColor Yellow "Save To : "
         Write-Host $PathToSave 
     }Catch{
-        Write-Error $_
+      Write-Error  "$($_.InvocationInfo.ScriptLineNumber) : $($_)"
     }
 }else{
     Write-Error "No NetworkAdapter exists for the specified index." -Category ObjectNotFound

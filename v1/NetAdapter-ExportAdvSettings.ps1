@@ -34,10 +34,9 @@ if ($null -ne $SelectedNetAdapter){
     Try {
         $WMIComputerInfo = Get-CimInstance -Class  Win32_ComputerSystemProduct
         $WMIOSInfo = Get-CimInstance -Class  Win32_OperatingSystem
-        $SelectedNetAdapterAdvSettings = $SelectedNetAdapter | Get-NetAdapterAdvancedProperty  | Select-Object * | Sort-Objec DisplayName
+        $SelectedNetAdapterAdvSettings = $SelectedNetAdapter | Get-NetAdapterAdvancedProperty  | Select-Object * | Sort-Object DisplayName
 
         $ObjExport = New-Object PSObject
-
         $ObjComputerInfo = New-Object PSObject
         $ObjComputerInfo | Add-Member -MemberType NoteProperty -Name "ExportDateTime" -Value $(Get-Date -Format "yyyy-MM-dd HH:mm")
         $ObjComputerInfo | Add-Member -MemberType NoteProperty -Name "ComputerSource" -Value $env:COMPUTERNAME
@@ -46,7 +45,6 @@ if ($null -ne $SelectedNetAdapter){
         $ObjComputerInfo | Add-Member -MemberType NoteProperty -Name "ModelVersion" -Value $WMIComputerInfo.Version
         $ObjComputerInfo | Add-Member -MemberType NoteProperty -Name "SerialNumber" -Value $WMIComputerInfo.IdentifyingNumber
         $ObjComputerInfo | Add-Member -MemberType NoteProperty -Name "OperatingSystemVersion" -Value $WMIOSInfo.Version
-
         $ObjExport | Add-Member -MemberType NoteProperty -Name "ExportedFrom" -Value $ObjComputerInfo
 
         $ObjNetAdapterInfo = New-Object PSObject
@@ -62,7 +60,6 @@ if ($null -ne $SelectedNetAdapter){
             $ObjNetAdapterAdvSettingValueInfo | Add-Member -MemberType NoteProperty -Name "Value" -Value "$($setting.DisplayValue)"
 
             $SelectNetAdapterValidDisplayAdvSettings = $Setting | Select-Object -ExpandProperty ValidDisplayValues
-
             [System.Collections.Arraylist]$ValidDisplayValues =@()
             foreach($ValidDisplayValue in $SelectNetAdapterValidDisplayAdvSettings){
                 $ValidDisplayValues.Add($ValidDisplayValue) | Out-Null

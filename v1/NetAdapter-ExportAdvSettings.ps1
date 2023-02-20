@@ -32,8 +32,8 @@ $SelectedNetAdapter = Get-NetAdapter -InterfaceIndex $SelectedNetAdapterIndex -E
 
 if ($null -ne $SelectedNetAdapter){
     Try {
-        $WMIComputerInfo = Get-WmiObject -Class  Win32_ComputerSystemProduct
-        $WMIOSInfo = Get-WmiObject -Class  Win32_OperatingSystem
+        $WMIComputerInfo = Get-CimInstance -Class  Win32_ComputerSystemProduct
+        $WMIOSInfo = Get-CimInstance -Class  Win32_OperatingSystem
         $SelectedNetAdapterAdvSettings = $SelectedNetAdapter | Get-NetAdapterAdvancedProperty  | Select-Object * | Sort-Objec DisplayName
 
         $ObjExport = New-Object PSObject

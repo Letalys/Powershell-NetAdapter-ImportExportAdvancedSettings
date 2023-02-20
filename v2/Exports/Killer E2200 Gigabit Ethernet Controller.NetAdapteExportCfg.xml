@@ -1,220 +1,318 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<NetAdapterExport>
-  <ExportInformations>
-    <Origin>PC-LETALYS</Origin>
-    <Manufacturer>To Be Filled By O.E.M.</Manufacturer>
-    <Model>To Be Filled By O.E.M.</Model>
-    <Version>To Be Filled By O.E.M.</Version>
-    <SN>To Be Filled By O.E.M.</SN>
-    <OperatingSystemVersion>10.0.19045</OperatingSystemVersion>
-    <ExportDateTime>2023-02-19 17:44</ExportDateTime>
-  </ExportInformations>
-  <NetAdapterInformations>
-    <Name>Killer E2200 Gigabit Ethernet Controller</Name>
-    <DriverInfos>
-      <FileName>KillerEth</FileName>
-      <INF>e2xw10x64.inf</INF>
-      <Version>9.0.0.42</Version>
-      <DateVersion>2016-09-14</DateVersion>
-    </DriverInfos>
-    <AdapterConfiguration>
-      <Param RegistryKeyWord="*EEE" RegistryValue="0">
-        <DisplayName>Energy Efficient Ethernet</DisplayName>
-        <ValidDisplayValues>
-          <Value ValidRegistryValue="1">Enabled</Value>
-          <Value ValidRegistryValue="0">Disabled</Value>
-        </ValidDisplayValues>
-      </Param>
-      <Param RegistryKeyWord="*FlowControl" RegistryValue="3">
-        <DisplayName>Flow Control</DisplayName>
-        <ValidDisplayValues>
-          <Value ValidRegistryValue="1">Tx Enabled</Value>
-          <Value ValidRegistryValue="2">Rx Enabled</Value>
-          <Value ValidRegistryValue="3">Rx &amp; Tx Enabled</Value>
-          <Value ValidRegistryValue="0">Disabled</Value>
-        </ValidDisplayValues>
-      </Param>
-      <Param RegistryKeyWord="*InterruptModeration" RegistryValue="1">
-        <DisplayName>Interrupt Moderation</DisplayName>
-        <ValidDisplayValues>
-          <Value ValidRegistryValue="1">Enabled</Value>
-          <Value ValidRegistryValue="0">Disabled</Value>
-        </ValidDisplayValues>
-      </Param>
-      <Param RegistryKeyWord="*IPChecksumOffloadIPv4" RegistryValue="3">
-        <DisplayName>IPv4 Checksum Offload</DisplayName>
-        <ValidDisplayValues>
-          <Value ValidRegistryValue="3">Rx &amp; Tx Enabled</Value>
-          <Value ValidRegistryValue="2">Rx Enabled</Value>
-          <Value ValidRegistryValue="1">Tx Enabled</Value>
-          <Value ValidRegistryValue="0">Disabled</Value>
-        </ValidDisplayValues>
-      </Param>
-      <Param RegistryKeyWord="*JumboPacket" RegistryValue="1514">
-        <DisplayName>Jumbo Frame</DisplayName>
-        <ValidDisplayValues>
-          <Value ValidRegistryValue="1514">Disabled</Value>
-          <Value ValidRegistryValue="2048">2KB MTU</Value>
-          <Value ValidRegistryValue="3072">3KB MTU</Value>
-          <Value ValidRegistryValue="4096">4KB MTU</Value>
-          <Value ValidRegistryValue="5120">5KB MTU</Value>
-          <Value ValidRegistryValue="6144">6KB MTU</Value>
-          <Value ValidRegistryValue="7168">7KB MTU</Value>
-          <Value ValidRegistryValue="8192">8KB MTU</Value>
-          <Value ValidRegistryValue="9216">9KB MTU</Value>
-        </ValidDisplayValues>
-      </Param>
-      <Param RegistryKeyWord="*LsoV1IPv4" RegistryValue="1">
-        <DisplayName>Large Send Offload (IPv4)</DisplayName>
-        <ValidDisplayValues>
-          <Value ValidRegistryValue="1">Enabled</Value>
-          <Value ValidRegistryValue="0">Disabled</Value>
-        </ValidDisplayValues>
-      </Param>
-      <Param RegistryKeyWord="*LsoV2IPv4" RegistryValue="1">
-        <DisplayName>Large Send Offload v2 (IPv4)</DisplayName>
-        <ValidDisplayValues>
-          <Value ValidRegistryValue="1">Enabled</Value>
-          <Value ValidRegistryValue="0">Disabled</Value>
-        </ValidDisplayValues>
-      </Param>
-      <Param RegistryKeyWord="*LsoV2IPv6" RegistryValue="1">
-        <DisplayName>Large Send Offload v2 (IPv6)</DisplayName>
-        <ValidDisplayValues>
-          <Value ValidRegistryValue="1">Enabled</Value>
-          <Value ValidRegistryValue="0">Disabled</Value>
-        </ValidDisplayValues>
-      </Param>
-      <Param RegistryKeyWord="*NumRssQueues" RegistryValue="2">
-        <DisplayName>Maximum Number of RSS Queues</DisplayName>
-        <ValidDisplayValues>
-          <Value ValidRegistryValue="4">4 RSS Queues</Value>
-          <Value ValidRegistryValue="2">2 RSS Queues</Value>
-          <Value ValidRegistryValue="1">1 RSS Queues</Value>
-        </ValidDisplayValues>
-      </Param>
-      <Param RegistryKeyWord="*PMARPOffload" RegistryValue="1">
-        <DisplayName>ARP Offload</DisplayName>
-        <ValidDisplayValues>
-          <Value ValidRegistryValue="1">Enabled</Value>
-          <Value ValidRegistryValue="0">Disabled</Value>
-        </ValidDisplayValues>
-      </Param>
-      <Param RegistryKeyWord="*PMNSOffload" RegistryValue="1">
-        <DisplayName>NS Offload</DisplayName>
-        <ValidDisplayValues>
-          <Value ValidRegistryValue="1">Enabled</Value>
-          <Value ValidRegistryValue="0">Disabled</Value>
-        </ValidDisplayValues>
-      </Param>
-      <Param RegistryKeyWord="*ReceiveBuffers" RegistryValue="1024">
-        <DisplayName>Receive Buffers</DisplayName>
-        <ValidDisplayValues />
-      </Param>
-      <Param RegistryKeyWord="*RSS" RegistryValue="1">
-        <DisplayName>Receive Side Scaling</DisplayName>
-        <ValidDisplayValues>
-          <Value ValidRegistryValue="1">Enabled</Value>
-          <Value ValidRegistryValue="0">Disabled</Value>
-        </ValidDisplayValues>
-      </Param>
-      <Param RegistryKeyWord="*SpeedDuplex" RegistryValue="0">
-        <DisplayName>Speed &amp; Duplex</DisplayName>
-        <ValidDisplayValues>
-          <Value ValidRegistryValue="0">Auto Negotiation</Value>
-          <Value ValidRegistryValue="1">10 Mbps Half Duplex</Value>
-          <Value ValidRegistryValue="2">10 Mbps Full Duplex</Value>
-          <Value ValidRegistryValue="3">100 Mbps Half Duplex</Value>
-          <Value ValidRegistryValue="4">100 Mbps Full Duplex</Value>
-        </ValidDisplayValues>
-      </Param>
-      <Param RegistryKeyWord="*TCPChecksumOffloadIPv4" RegistryValue="3">
-        <DisplayName>TCP Checksum Offload (IPv4)</DisplayName>
-        <ValidDisplayValues>
-          <Value ValidRegistryValue="3">Rx &amp; Tx Enabled</Value>
-          <Value ValidRegistryValue="2">Rx Enabled</Value>
-          <Value ValidRegistryValue="1">Tx Enabled</Value>
-          <Value ValidRegistryValue="0">Disabled</Value>
-        </ValidDisplayValues>
-      </Param>
-      <Param RegistryKeyWord="*TCPChecksumOffloadIPv6" RegistryValue="3">
-        <DisplayName>TCP Checksum Offload (IPv6)</DisplayName>
-        <ValidDisplayValues>
-          <Value ValidRegistryValue="3">Rx &amp; Tx Enabled</Value>
-          <Value ValidRegistryValue="2">Rx Enabled</Value>
-          <Value ValidRegistryValue="1">Tx Enabled</Value>
-          <Value ValidRegistryValue="0">Disabled</Value>
-        </ValidDisplayValues>
-      </Param>
-      <Param RegistryKeyWord="*TransmitBuffers" RegistryValue="1024">
-        <DisplayName>Transmit Buffers</DisplayName>
-        <ValidDisplayValues />
-      </Param>
-      <Param RegistryKeyWord="*UDPChecksumOffloadIPv4" RegistryValue="3">
-        <DisplayName>UDP Checksum Offload (IPv4)</DisplayName>
-        <ValidDisplayValues>
-          <Value ValidRegistryValue="3">Rx &amp; Tx Enabled</Value>
-          <Value ValidRegistryValue="2">Rx Enabled</Value>
-          <Value ValidRegistryValue="1">Tx Enabled</Value>
-          <Value ValidRegistryValue="0">Disabled</Value>
-        </ValidDisplayValues>
-      </Param>
-      <Param RegistryKeyWord="*UDPChecksumOffloadIPv6" RegistryValue="3">
-        <DisplayName>UDP Checksum Offload (IPv6)</DisplayName>
-        <ValidDisplayValues>
-          <Value ValidRegistryValue="3">Rx &amp; Tx Enabled</Value>
-          <Value ValidRegistryValue="2">Rx Enabled</Value>
-          <Value ValidRegistryValue="1">Tx Enabled</Value>
-          <Value ValidRegistryValue="0">Disabled</Value>
-        </ValidDisplayValues>
-      </Param>
-      <Param RegistryKeyWord="*WakeOnMagicPacket" RegistryValue="1">
-        <DisplayName>Wake on magic packet</DisplayName>
-        <ValidDisplayValues>
-          <Value ValidRegistryValue="1">Enabled</Value>
-          <Value ValidRegistryValue="0">Disabled</Value>
-        </ValidDisplayValues>
-      </Param>
-      <Param RegistryKeyWord="*WakeOnPattern" RegistryValue="1">
-        <DisplayName>Wake on pattern match</DisplayName>
-        <ValidDisplayValues>
-          <Value ValidRegistryValue="1">Enabled</Value>
-          <Value ValidRegistryValue="0">Disabled</Value>
-        </ValidDisplayValues>
-      </Param>
-      <Param RegistryKeyWord="Ecma" RegistryValue="0">
-        <DisplayName>ECMA</DisplayName>
-        <ValidDisplayValues>
-          <Value ValidRegistryValue="1">Enabled</Value>
-          <Value ValidRegistryValue="0">Disabled</Value>
-        </ValidDisplayValues>
-      </Param>
-      <Param RegistryKeyWord="Ioac_SwoiSupported" RegistryValue="0">
-        <DisplayName>SWOI</DisplayName>
-        <ValidDisplayValues>
-          <Value ValidRegistryValue="1">Enabled</Value>
-          <Value ValidRegistryValue="0">Disabled</Value>
-        </ValidDisplayValues>
-      </Param>
-      <Param RegistryKeyWord="MaxInterrupt" RegistryValue="10000">
-        <DisplayName>Max IRQ per Second</DisplayName>
-        <ValidDisplayValues />
-      </Param>
-      <Param RegistryKeyWord="NetworkAddress" RegistryValue="">
-        <DisplayName>Network Address</DisplayName>
-        <ValidDisplayValues />
-      </Param>
-      <Param RegistryKeyWord="ShutdownWake" RegistryValue="1">
-        <DisplayName>Shutdown Wake Up</DisplayName>
-        <ValidDisplayValues>
-          <Value ValidRegistryValue="1">Enabled</Value>
-          <Value ValidRegistryValue="0">Disabled</Value>
-        </ValidDisplayValues>
-      </Param>
-      <Param RegistryKeyWord="VLanID" RegistryValue="0">
-        <DisplayName>VLAN ID</DisplayName>
-        <ValidDisplayValues />
-      </Param>
-    </AdapterConfiguration>
-  </NetAdapterInformations>
-</NetAdapterExport>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Objects>
+  <Object>
+    <Property Name="ExportedFrom">
+      <Property Name="ExportDateTime">2023-02-20 23:59</Property>
+      <Property Name="ComputerSource">PC-LETALYS</Property>
+      <Property Name="Manufacturer">To Be Filled By O.E.M.</Property>
+      <Property Name="ModelName">To Be Filled By O.E.M.</Property>
+      <Property Name="ModelVersion">To Be Filled By O.E.M.</Property>
+      <Property Name="SerialNumber">To Be Filled By O.E.M.</Property>
+      <Property Name="OperatingSystemVersion">10.0.19045</Property>
+    </Property>
+    <Property Name="NetAdapterInformations">
+      <Property Name="InterfaceDescription">Killer E2200 Gigabit Ethernet Controller</Property>
+      <Property Name="DriverFileName">e2xw10x64.inf</Property>
+      <Property Name="DriverVersion">9.0.0.42</Property>
+      <Property Name="DriverDate">2016-09-14</Property>
+      <Property Name="AdvancedSettings">
+        <Property>
+          <Property Name="*EEE">
+            <Property Name="Description">Energy Efficient Ethernet</Property>
+            <Property Name="Value">0</Property>
+            <Property Name="ValidDisplayValues">
+              <Property Name="1">Enabled</Property>
+              <Property Name="0">Disabled</Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="*FlowControl">
+            <Property Name="Description">Flow Control</Property>
+            <Property Name="Value">3</Property>
+            <Property Name="ValidDisplayValues">
+              <Property Name="1">Tx Enabled</Property>
+              <Property Name="2">Rx Enabled</Property>
+              <Property Name="3">Rx &amp; Tx Enabled</Property>
+              <Property Name="0">Disabled</Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="*InterruptModeration">
+            <Property Name="Description">Interrupt Moderation</Property>
+            <Property Name="Value">1</Property>
+            <Property Name="ValidDisplayValues">
+              <Property Name="1">Enabled</Property>
+              <Property Name="0">Disabled</Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="*IPChecksumOffloadIPv4">
+            <Property Name="Description">IPv4 Checksum Offload</Property>
+            <Property Name="Value">3</Property>
+            <Property Name="ValidDisplayValues">
+              <Property Name="3">Rx &amp; Tx Enabled</Property>
+              <Property Name="2">Rx Enabled</Property>
+              <Property Name="1">Tx Enabled</Property>
+              <Property Name="0">Disabled</Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="*JumboPacket">
+            <Property Name="Description">Jumbo Frame</Property>
+            <Property Name="Value">1514</Property>
+            <Property Name="ValidDisplayValues">
+              <Property Name="1514">Disabled</Property>
+              <Property Name="2048">2KB MTU</Property>
+              <Property Name="3072">3KB MTU</Property>
+              <Property Name="4096">4KB MTU</Property>
+              <Property Name="5120">5KB MTU</Property>
+              <Property Name="6144">6KB MTU</Property>
+              <Property Name="7168">7KB MTU</Property>
+              <Property Name="8192">8KB MTU</Property>
+              <Property Name="9216">9KB MTU</Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="*LsoV1IPv4">
+            <Property Name="Description">Large Send Offload (IPv4)</Property>
+            <Property Name="Value">1</Property>
+            <Property Name="ValidDisplayValues">
+              <Property Name="1">Enabled</Property>
+              <Property Name="0">Disabled</Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="*LsoV2IPv4">
+            <Property Name="Description">Large Send Offload v2 (IPv4)</Property>
+            <Property Name="Value">1</Property>
+            <Property Name="ValidDisplayValues">
+              <Property Name="1">Enabled</Property>
+              <Property Name="0">Disabled</Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="*LsoV2IPv6">
+            <Property Name="Description">Large Send Offload v2 (IPv6)</Property>
+            <Property Name="Value">1</Property>
+            <Property Name="ValidDisplayValues">
+              <Property Name="1">Enabled</Property>
+              <Property Name="0">Disabled</Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="*NumRssQueues">
+            <Property Name="Description">Maximum Number of RSS Queues</Property>
+            <Property Name="Value">2</Property>
+            <Property Name="ValidDisplayValues">
+              <Property Name="4">4 RSS Queues</Property>
+              <Property Name="2">2 RSS Queues</Property>
+              <Property Name="1">1 RSS Queues</Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="*PMARPOffload">
+            <Property Name="Description">ARP Offload</Property>
+            <Property Name="Value">1</Property>
+            <Property Name="ValidDisplayValues">
+              <Property Name="1">Enabled</Property>
+              <Property Name="0">Disabled</Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="*PMNSOffload">
+            <Property Name="Description">NS Offload</Property>
+            <Property Name="Value">1</Property>
+            <Property Name="ValidDisplayValues">
+              <Property Name="1">Enabled</Property>
+              <Property Name="0">Disabled</Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="*ReceiveBuffers">
+            <Property Name="Description">Receive Buffers</Property>
+            <Property Name="Value">1024</Property>
+            <Property Name="ValidDisplayValues">
+              <Property Name="1">Enabled</Property>
+              <Property Name="0">Disabled</Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="*RSS">
+            <Property Name="Description">Receive Side Scaling</Property>
+            <Property Name="Value">1</Property>
+            <Property Name="ValidDisplayValues">
+              <Property Name="1">Enabled</Property>
+              <Property Name="0">Disabled</Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="*SpeedDuplex">
+            <Property Name="Description">Speed &amp; Duplex</Property>
+            <Property Name="Value">0</Property>
+            <Property Name="ValidDisplayValues">
+              <Property Name="0">Auto Negotiation</Property>
+              <Property Name="1">10 Mbps Half Duplex</Property>
+              <Property Name="2">10 Mbps Full Duplex</Property>
+              <Property Name="3">100 Mbps Half Duplex</Property>
+              <Property Name="4">100 Mbps Full Duplex</Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="*TCPChecksumOffloadIPv4">
+            <Property Name="Description">TCP Checksum Offload (IPv4)</Property>
+            <Property Name="Value">3</Property>
+            <Property Name="ValidDisplayValues">
+              <Property Name="3">Rx &amp; Tx Enabled</Property>
+              <Property Name="2">Rx Enabled</Property>
+              <Property Name="1">Tx Enabled</Property>
+              <Property Name="0">Disabled</Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="*TCPChecksumOffloadIPv6">
+            <Property Name="Description">TCP Checksum Offload (IPv6)</Property>
+            <Property Name="Value">3</Property>
+            <Property Name="ValidDisplayValues">
+              <Property Name="3">Rx &amp; Tx Enabled</Property>
+              <Property Name="2">Rx Enabled</Property>
+              <Property Name="1">Tx Enabled</Property>
+              <Property Name="0">Disabled</Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="*TransmitBuffers">
+            <Property Name="Description">Transmit Buffers</Property>
+            <Property Name="Value">1024</Property>
+            <Property Name="ValidDisplayValues">
+              <Property Name="3">Rx &amp; Tx Enabled</Property>
+              <Property Name="2">Rx Enabled</Property>
+              <Property Name="1">Tx Enabled</Property>
+              <Property Name="0">Disabled</Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="*UDPChecksumOffloadIPv4">
+            <Property Name="Description">UDP Checksum Offload (IPv4)</Property>
+            <Property Name="Value">3</Property>
+            <Property Name="ValidDisplayValues">
+              <Property Name="3">Rx &amp; Tx Enabled</Property>
+              <Property Name="2">Rx Enabled</Property>
+              <Property Name="1">Tx Enabled</Property>
+              <Property Name="0">Disabled</Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="*UDPChecksumOffloadIPv6">
+            <Property Name="Description">UDP Checksum Offload (IPv6)</Property>
+            <Property Name="Value">3</Property>
+            <Property Name="ValidDisplayValues">
+              <Property Name="3">Rx &amp; Tx Enabled</Property>
+              <Property Name="2">Rx Enabled</Property>
+              <Property Name="1">Tx Enabled</Property>
+              <Property Name="0">Disabled</Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="*WakeOnMagicPacket">
+            <Property Name="Description">Wake on magic packet</Property>
+            <Property Name="Value">1</Property>
+            <Property Name="ValidDisplayValues">
+              <Property Name="1">Enabled</Property>
+              <Property Name="0">Disabled</Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="*WakeOnPattern">
+            <Property Name="Description">Wake on pattern match</Property>
+            <Property Name="Value">1</Property>
+            <Property Name="ValidDisplayValues">
+              <Property Name="1">Enabled</Property>
+              <Property Name="0">Disabled</Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="Ecma">
+            <Property Name="Description">ECMA</Property>
+            <Property Name="Value">0</Property>
+            <Property Name="ValidDisplayValues">
+              <Property Name="1">Enabled</Property>
+              <Property Name="0">Disabled</Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="Ioac_SwoiSupported">
+            <Property Name="Description">SWOI</Property>
+            <Property Name="Value">0</Property>
+            <Property Name="ValidDisplayValues">
+              <Property Name="1">Enabled</Property>
+              <Property Name="0">Disabled</Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="MaxInterrupt">
+            <Property Name="Description">Max IRQ per Second</Property>
+            <Property Name="Value">10000</Property>
+            <Property Name="ValidDisplayValues">
+              <Property Name="1">Enabled</Property>
+              <Property Name="0">Disabled</Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="NetworkAddress">
+            <Property Name="Description">Network Address</Property>
+            <Property Name="Value">
+            </Property>
+            <Property Name="ValidDisplayValues">
+              <Property Name="1">Enabled</Property>
+              <Property Name="0">Disabled</Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="ShutdownWake">
+            <Property Name="Description">Shutdown Wake Up</Property>
+            <Property Name="Value">1</Property>
+            <Property Name="ValidDisplayValues">
+              <Property Name="1">Enabled</Property>
+              <Property Name="0">Disabled</Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property>
+          <Property Name="VLanID">
+            <Property Name="Description">VLAN ID</Property>
+            <Property Name="Value">0</Property>
+            <Property Name="ValidDisplayValues">
+              <Property Name="1">Enabled</Property>
+              <Property Name="0">Disabled</Property>
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+    </Property>
+  </Object>
+</Objects>

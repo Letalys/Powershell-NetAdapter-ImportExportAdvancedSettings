@@ -1,3 +1,4 @@
+﻿#Requires -Version 4.0
 <#
 .SYNOPSIS
   This script can be use for Import NetAdapter AdvancedSetting from XML format
@@ -12,62 +13,23 @@
                Accept pipeline input?       false
                Accept wildcard characters?  false
 .NOTES
-  Version:        2.0
+  Version:        1.0
   Author:         Letalys
   Creation Date:  19/02/2023
   Purpose/Change: Initial script development
 #>
+Param([String]$ImportXMLFile)
 
-Param([String]$ImportXMLArgs)
-
-$LogDir="C:\NetAdapterImports"
-
-if((Test-Path $LogDir) -eq $false){
-    New-Item -Path $LogDir -ItemType Directory -ErrorAction Stop
-}
-
-Function Get-RegistryClassPath{
-    param(
-        [Parameter(Mandatory=$true)][String]$Class
-	)
-
-    write-host ""
-    Write-Host -NoNewLine -ForegroundColor Yellow "Searching for $Class GUID :"
-
-    $ParentClassKey = "HKLM:\SYSTEM\CurrentControlSet\Control\Class"
-    $NetClassGUID = Get-ChildItem -Path $ParentClassKey | Get-ItemProperty -Name "Class" -ErrorAction SilentlyContinue | Where-Object {$_.class -eq "$Class"}
-
-    if($null -ne $NetClassGUID){
-        Write-Host -ForegroundColor Green $NetClassGUID.PSChildName
-
-        $ParentNetClassKey =  Join-Path -Path $ParentClassKey -ChildPath $NetClassGUID.PSChildName
-
-        return $ParentNetClassKey
-    }
-}
+#region Variables
+    $NetClassRegistryPath = "HKLM:\SYSTEM\CurrentControlSet\Control\Class\{4d36e972-e325-11ce-bfc1-08002be10318}"
+#endregion Variables
 
 $currentPrincipal = New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsIdentity]::GetCurrent())
 if($currentPrincipal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator) -eq $false){
-
-    Write-Host -ForegroundColor Red "This script requires elevation of privilege to run."
-
-    if($ImportXMLArgs -ne ""){
-        $ReExecutionArgs = "-File `"$($myinvocation.mycommand.definition)`" -ImportXMLArgs `"$($ImportXMLArgs)`""
-    }else{
-        $ReExecutionArgs = "-File `"$($myinvocation.mycommand.definition)`""
-    }
-
-    Try{
-        Start-Process powershell -Verb runAs -ArgumentList "$ReExecutionArgs" -ErrorAction SilentlyContinue
-    }Catch{
-        Write-host -ForegroundColor Red $_
-        exit
-    }
-
-    Break
+    Write-Error "This script requires elevation of privilege to run" -Category AuthenticationError
+    pause
+    exit
 }
-
-Add-Type -AssemblyName System.Windows.Forms
 
 Clear-Host
 Write-Host -ForegroundColor Cyan "------------------------------------------------------------"
@@ -75,158 +37,86 @@ Write-Host -ForegroundColor Cyan "       NetAdapter Advanced Settings Importing 
 Write-Host -ForegroundColor Cyan "------------------------------------------------------------"
 Write-Host ""
 
+if($ImportXMLFile -eq ""){
+    Add-Type -AssemblyName System.Windows.Forms
 
-if($ImportXMLArgs -ne ""){
-    Write-Host -ForegroundColor cyan "Process Commandline."
-
-    if(Test-Path -Path $ImportXMLArgs){
-        $CurrentFile = Get-Item $ImportXMLArgs -ErrorAction SilentlyContinue
-    }else{
-        Write-Host -ForegroundColor Red "Specified file not found"
-    }
-}else{
-    Write-Host -ForegroundColor cyan "Process console mode"
-
-    #Sélection du fichier de configuration
     $FileBrowser = New-Object System.Windows.Forms.OpenFileDialog -Property @{ 
         Filter = 'XML (*.xml)|*.xml'
         RestoreDirectory = $true
         Title ="Choose the configuration file to import"
         Multiselect =$false
     }
-
     $null = $FileBrowser.ShowDialog()
-
-    $FileBrowsed = $FileBrowser.FileName
-    $CurrentFile = Get-Item $FileBrowsed -ErrorAction SilentlyContinue
+    $ImportXMLFile = $FileBrowser.FileName
 }
 
-if($null -ne $CurrentFile){
-    Write-Host -NoNewLine -ForegroundColor Yellow "Loading file"
-    Write-Host -NoNewLine  "$($CurrentFile.Name) "
-    Write-Host -NoNewLine -ForegroundColor Yellow ": "
+If((Test-Path $ImportXMLFile) -eq $false){Write-Error "Specified file not exist" -Category NotSpecified;exit}
 
-    [xml]$NetAdapterImport = Get-Content $CurrentFile.FullName
-    Write-Host -ForegroundColor Green "OK"
-
-    #Affichage des information des cartes
-    Write-Host ""
-    Write-Host -NoNewLine -ForegroundColor Yellow "Availabled NetworkAdapter :"
-
-    $NetAdpterList = Get-WMIObject Win32_NetworkAdapter -Filter "PhysicalAdapter='True'" | Select-Object DeviceID, Name, ServiceName
-    $NetAdpterList | Format-Table -AutoSize
+Try {
+    Write-Host -NoNewLine -ForegroundColor Yellow "Loading File... "
+    $CurrentFile = Get-Item $ImportXMLFile -ErrorAction SilentlyContinue
     
-    Write-Host ""
-    Write-Host -NoNewLine -ForegroundColor Yellow "Linked Drivers list (Wait) :"
-    [System.Collections.ArrayList]$DriversTab =@()
-    Foreach($na in $NetAdpterList){
-       $Drv = Get-WMIObject Win32_PnpSignedDriver -Filter "DeviceName='$($na.Name)'" | Select-Object DeviceName,DriverVersion,DriverDate,infName 
-       $DriversTab.Add($Drv) |Out-Null
-    }
-    $DriversTab | Format-Table
+    [xml]$XML = Get-Content $CurrentFile.FullName
+    Write-Host -ForegroundColor Green "Completed"
 
+    $NetAdapterIfName = Select-Xml -Xml $XML -XPath "//Property[contains(@Name,'InterfaceDescription')]" | Select-Object -ExpandProperty Node
+    $NetAdapterDriverVers  = Select-Xml -Xml $XML -XPath "//Property[contains(@Name,'DriverVersion')]" | Select-Object -ExpandProperty Node
+    $NetAdapterAdvSettings = Select-Xml -Xml $XML -XPath "//Property[contains(@Name,'AdvancedSettings')]/Property/Property" | Select-Object -ExpandProperty Node
 
-    Write-Host -NoNewLine -ForegroundColor Yellow "Checking the presence of the network adapter specified in XML File : "
-
-    $NetAdapter = Get-WMIObject Win32_NetworkAdapter -Filter "Name='$($NetAdapterImport.NetAdapterExport.NetAdapterInformations.Name)' AND PhysicalAdapter='True'"
+    Write-Host -NoNewline -ForegroundColor Yellow "Checking the presence of the network adapter specified in XML File... "
+    $NetAdapterList =  Get-CIMInstance -Class Win32_NetworkAdapter -Filter "Name='$($NetAdapterIfName.("#text"))' AND PhysicalAdapter='True'"
 
     Switch($true){
-        ($null -eq $NetAdapter){
-            Write-Host -ForegroundColor Red "No matches found"
-            $CheckCard = $false
-            Break;
-        }
-        ($($NetAdapter | Measure-Object).count -eq 1){
+        ($($NetAdapterList | Measure-Object).count -eq 0){Write-Error "No matches found" -Category InvalidResult;exit}
+        ($($NetAdapterList | Measure-Object).count -gt 1){Write-Error "Multiple matches found, unable to continue." -Category InvalidResult;exit}
+        ($($NetAdapterList | Measure-Object).count -eq 1){
             Write-Host -ForegroundColor Green "Match found"
 
-            $GUIDClass = Get-RegistryClassPath -Class NET
-
-            #Récupération de l'index au format XXXX
-            $SelectedIndexFormated = $NetAdapter.DeviceID
-            While($SelectedIndexFormated.Length -ne 4){
-                $SelectedIndexFormated = "0$SelectedIndexFormated"
+            #Set the real Registry Index (4 digit)
+            $SelectedNetAdapterIndex = $NetAdapterList.DeviceID
+            While($SelectedNetAdapterIndex.Length -ne 4){
+                $SelectedNetAdapterIndex = "0$SelectedNetAdapterIndex"
             }
+            
+            $NetAdapterRegistryPath = Join-Path -Path $NetClassRegistryPath -ChildPath $SelectedNetAdapterIndex
 
-             Write-Host -NoNewline -Foreground Yellow "`t Real Index : "
-             Write-Host $SelectedIndexFormated
+            Write-host -ForegroundColor Yellow -NoNewline "Checking the driver version specified in XML File... "
 
-             $RegistryAdapterPath = Join-Path -Path $GUIDClass -ChildPath $SelectedIndexFormated
+            $NetAdapterDriverVers = Get-CimInstance -Class Win32_PnpSignedDriver -Filter "DeviceName='$($SelectedNetAdapter.Name)'"
+            
+            if($NetAdapterList.DriverVersion -eq $NetAdapterDriverVers.("#text")){
+                Write-Host -ForegroundColor Green "Match found"
+                Write-host -ForegroundColor Yellow  "Import settings... "
 
-             Write-Host -NoNewline -Foreground Yellow "`t Registry : "
-             Write-Host $RegistryAdapterPath
+                Foreach($setting in $NetAdapterAdvSettings){
+                    $GetValue = Select-Xml -Xml $XML -XPath "//Property[contains(@Name,'$($setting.Name)')]//Property[@Name='Value']" | Select-Object -ExpandProperty Node
+        
+                    Write-Host -ForegroundColor Yellow -NoNewline "`t $($setting.Name) : "
+                    if($null -ne $GetValue.("#text")){
+                        Set-ItemProperty -Path $NetAdapterRegistryPath -Name $($setting.Name) -Value $GetValue.("#text")
+                        Write-Host -ForegroundColor green "Applied"
+                        
+                    }else{
+                        Write-Host -ForegroundColor Red "No Value to set"
+                    }
+                }
 
-            $CheckCard = $true
-            Break;
-        }
-        ($($NetAdapter | Measure-Object).count -gt 1){
-            Write-Host -ForegroundColor Red "Multiple matches found, unable to continue."
-            $CheckCard = $false
-            Break;
-        }
-    }
+                Write-Host -NoNewLine -ForegroundColor Yellow "Rebooting NetworkAdapter : "
+                try{
+                    Invoke-CimMethod -InputObject $NetAdapterList -MethodName Disable | Out-Null
+                    Invoke-CimMethod -InputObject $NetAdapterList -MethodName Enable | Out-Null
+                    Write-Host -ForegroundColor Green "Completed"
+                }Catch{
+                    Write-Error  "$($_.InvocationInfo.ScriptLineNumber) : $($_)"
+                }
 
-    $NetAdapterDriverList = Get-WMIObject Win32_PnpSignedDriver -Filter "DeviceName='$($NetAdapterImport.NetAdapterExport.NetAdapterInformations.Name)'" | Select-Object DeviceName,DriverVersion,DriverDate,infName 
-
-    If($CheckCard -eq $true){
-        Write-Host ""
-        Write-Host -NoNewLine -ForegroundColor Yellow "Checking the driver version specified in XML File : "
-
-        If($NetAdapterDriverList.DriverVersion -eq "$($NetAdapterImport.NetAdapterExport.NetAdapterInformations.DriverInfos.Version)"){
-            Write-Host -ForegroundColor Green "Match found"
-            $CheckVersion = $true
-
-        }else{
-            Write-Host -ForegroundColor Green "Drivers Versions do not match"
-            $CheckVersion =$false
-        }
-    }
-
-    Write-Host ""
-    if(($CheckCard -eq $true) -and ($CheckVersion -eq $true)){
-         Write-Host -ForegroundColor Yellow "Import settings : "
-
-         foreach($p in $NetAdapterImport.NetAdapterExport.NetAdapterInformations.AdapterConfiguration.Param){
-            Write-Host -NoNewline "`t $($p.DisplayName) : "
-            Try{
-                #Set-ItemProperty -InterfaceDescription $NetAdapterList.InterfaceDescription -RegistryKeyword "$($p.GetAttribute("RegistryKeyWord"))" -DisplayValue $($p.DisplayValue)
-                Set-ItemProperty -Path $RegistryAdapterPath -Name $p.GetAttribute("RegistryKeyWord") -Value $p.GetAttribute("RegistryValue")
-                Write-Host -ForegroundColor Green "Applied"
-            }Catch{
-                Write-Host -ForegroundColor Red "Fail : $_"
+                Write-Host -ForegroundColor green "Process Completed"
+            }else{
+                Write-Error "Drivers Versions do not match" -Category InvalidResult
+                exit
             }
-
-         }
-    }else{
-        Write-Error "No Match - Check if the computer has a compatible card and a compatible driver version"
-        exit 1
+        }
     }
-   
-    Write-Host ""
-    Write-Host -ForegroundColor Yellow "Import Completed."
-
-    Write-Host ""
-    Write-Host -NoNewLine -ForegroundColor Yellow "Rebooting NetworkAdapter : "
-    try{
-        $NetAdapter.Disable() |Out-Null
-        $NetAdapter.Enable() |Out-Null
-
-        Write-Host -ForegroundColor Green "Completed"
-    }Catch{
-        Write-Error $_
-    }
-   
-
-    $LogFileName="$($CurrentFile.BaseName).Import.OK"
-    New-Item -Path $LogDir -ItemType File -Name $LogFileName -Force -ErrorAction Stop | Out-Null
-    
-    exit 0
-
-}else{
-    Write-Host -ForegroundColor "Red" "Le fichier n'a pas pu être chargé"
-    Write-Error "Le fichier $ImportXMLArgs n'a pu être chargé."
-    exit 1
+}catch{
+    Write-Error  "$($_.InvocationInfo.ScriptLineNumber) : $($_)"
 }
-if($ImportXMLArgs -eq ""){
-    pause
-}
-#pause

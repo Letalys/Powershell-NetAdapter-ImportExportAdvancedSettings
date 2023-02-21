@@ -93,7 +93,7 @@ Try {
         }
     }
 }catch{
-    Write-Error "`n $_"
+    Write-Error  "$($_.InvocationInfo.ScriptLineNumber) : $($_)"
 }
 
 

@@ -19,7 +19,7 @@
         <Property>
           <Property Name="*EEE">
             <Property Name="Description">Energy Efficient Ethernet</Property>
-            <Property Name="Value">0</Property>
+            <Property Name="Value">1</Property>
             <Property Name="ValidDisplayValues">
               <Property Name="1">Enabled</Property>
               <Property Name="0">Disabled</Property>

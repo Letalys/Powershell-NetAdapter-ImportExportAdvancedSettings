@@ -13,7 +13,7 @@ This version of Import/Export NetworkAdapter AdvancedSettings use the NetAdapter
 ### [v2](./v2) : Using WMI and Registry
 This Version of Import/Export NetworkAdapter AdvancedSettings use WMI and Registry to work. It can use on all Windows Version. But i recommand to use v1 for compatible Operating System.
 
-**This version is being remake to optimize the code and reduce its weight, but current works**
+If need you can replace Cmdlet Get-CIMInstance or Invoke-CIMInstance with Get-WMIObject, but not working on higher powershell version.
 
 ## NetworkAdapter Models and Drivers Versions
 Imports of settings can only be carried out if the network adapter and its driver version correspond to the elements present on the target system.

@@ -1,4 +1,3 @@
-﻿#Requires -Version 4.0
 <#
 .SYNOPSIS
   This script can be use for Import NetAdapter AdvancedSetting from XML format

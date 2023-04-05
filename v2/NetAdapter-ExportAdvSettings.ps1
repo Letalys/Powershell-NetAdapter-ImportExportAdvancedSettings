@@ -96,7 +96,7 @@ if($null -ne $SelectedNetAdapter){
          $ObjNetAdapterInfo | Add-Member -MemberType NoteProperty -Name "AdvancedSettings" -Value $SettingsList
          $ObjExport | Add-Member -MemberType NoteProperty -Name "NetAdapterInformations" -Value $ObjNetAdapterInfo
 
-         $PathToSave = "$PSScriptRoot\Exports\$($SelectedNetAdapter.Name).NetAdapteExportCfg.xml"
+         $PathToSave = "$PSScriptRoot\Exports\$($SelectedNetAdapter.Name).NetAdapterExportCfg.xml"
          $NewXML = ConvertTo-Xml -As "Document" -InputObject $ObjExport -Depth 5 -NoTypeInformation
          $NewXML.Save($PathToSave)
  

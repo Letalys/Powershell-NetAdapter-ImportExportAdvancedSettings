@@ -49,7 +49,7 @@ if($ImportXMLFile -eq ""){
     $ImportXMLFile = $FileBrowser.FileName
 }
 
-If((Test-Path $ImportXMLFile) -eq $false){Write-Error "Specified file not exist" -Category NotSpecified;exit}
+If((Test-Path $ImportXMLFile) -eq $false){Write-Error "Specified file not exist" -Category NotSpecified;exit 1}
 
 Try {
     Write-Host -NoNewLine -ForegroundColor Yellow "Loading File... "
@@ -66,8 +66,8 @@ Try {
     $NetAdapterList =  Get-CIMInstance -Class Win32_NetworkAdapter -Filter "Name='$($NetAdapterIfName.("#text"))' AND PhysicalAdapter='True'"
 
     Switch($true){
-        ($($NetAdapterList | Measure-Object).count -eq 0){Write-Error "No matches found" -Category InvalidResult;exit}
-        ($($NetAdapterList | Measure-Object).count -gt 1){Write-Error "Multiple matches found, unable to continue." -Category InvalidResult;exit}
+        ($($NetAdapterList | Measure-Object).count -eq 0){Write-Error "No matches found" -Category InvalidResult;exit 2}
+        ($($NetAdapterList | Measure-Object).count -gt 1){Write-Error "Multiple matches found, unable to continue." -Category InvalidResult;exit 3}
         ($($NetAdapterList | Measure-Object).count -eq 1){
             Write-Host -ForegroundColor Green "Match found"
 
@@ -110,12 +110,18 @@ Try {
                 }
 
                 Write-Host -ForegroundColor green "Process Completed"
+
+                #Create LogFile
+                Copy-Item -Path $ImportXMLFile -Destination "c:\$($CurrentFile.Basename).Import.OK" -Force
+
+                exit 0
             }else{
                 Write-Error "Drivers Versions do not match" -Category InvalidResult
-                exit
+                exit 4
             }
         }
     }
 }catch{
     Write-Error  "$($_.InvocationInfo.ScriptLineNumber) : $($_)"
+    exit -1
 }
